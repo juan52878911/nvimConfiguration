@@ -106,4 +106,14 @@ return require('packer').startup(function(use)
         "akinsho/toggleterm.nvim", 
         config = 'require "plugins.config.toggleterm"' 
     })
+
+    -- install without yarn or npm
+    use({ 
+        "iamcco/markdown-preview.nvim", 
+        run = "cd app && npm install", 
+        setup = function() 
+            vim.g.mkdp_filetypes = { "markdown" } 
+        end, 
+        ft = { "markdown" }, 
+    })
 end)

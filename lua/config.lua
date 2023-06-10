@@ -17,4 +17,4 @@ vim.o.expandtab = true -- Usa espacios en lugar de tabulaciones
 vim.o.ignorecase = true -- Ignora mayúsculas y minúsculas en la búsqueda
 vim.o.smartcase = true -- Cambia a búsqueda sensible a mayúsculas si se utiliza mayúscula
 vim.o.hlsearch = true -- Resalta los resultados de búsqueda
-
+vim.o.scrolloff = 8 -- Deja un margen de 8 lineas al scrollear
