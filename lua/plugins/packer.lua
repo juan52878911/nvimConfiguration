@@ -116,4 +116,7 @@ return require('packer').startup(function(use)
         end, 
         ft = { "markdown" }, 
     })
+
+    -- Notificaciones
+    use ({"rcarriga/nvim-notify"})
 end)
