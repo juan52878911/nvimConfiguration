@@ -1,3 +1,5 @@
+vim.notify = require("notify")
+
 -- Configuración de apariencia
 vim.o.number = true -- Muestra números de línea
 vim.o.relativenumber = true -- Muestra números de línea relativos

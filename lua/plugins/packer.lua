@@ -4,10 +4,10 @@ local packer_exists = vim.fn.empty(vim.fn.glob(install_path)) == 0
 
 -- Si Packer no está instalado, clonarlo desde el repositorio de GitHub
 if not packer_exists then
-  print('Packer no encontrado. Descargando e instalando...')
-  vim.fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
-  vim.cmd('packadd packer.nvim')
-  print('Packer instalado.')
+    print('Packer no encontrado. Descargando e instalando...')
+    vim.fn.system({ 'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path })
+    vim.cmd('packadd packer.nvim')
+    print('Packer instalado.')
 end
 
 -- Configuración de plugins
@@ -118,5 +118,8 @@ return require('packer').startup(function(use)
     })
 
     -- Notificaciones
-    use ({"rcarriga/nvim-notify"})
+    use ({
+        "rcarriga/nvim-notify",
+        config = 'require "plugins.config.notify"'
+    })
 end)
