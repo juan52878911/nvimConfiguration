@@ -23,8 +23,8 @@ return require('packer').startup(function(use)
     })
 
     -- Treesitter
-    use({ 
-        "nvim-treesitter/nvim-treesitter", 
+    use({
+        "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
         config = 'require "plugins.config.treesitter"'
     })
@@ -39,9 +39,9 @@ return require('packer').startup(function(use)
     })
 
     -- Comentarios
-  	use({ 
-        "numToStr/Comment.nvim", 
-        config = 'require "plugins.config.comment"' 
+  	use({
+        "numToStr/Comment.nvim",
+        config = 'require "plugins.config.comment"'
     })
 
     -- Popups
@@ -55,15 +55,15 @@ return require('packer').startup(function(use)
     })
 
     -- File explorer
-    use({ 
-        "kyazdani42/nvim-tree.lua", 
-        config = 'require "plugins.config.nvim-tree"' 
+    use({
+        "kyazdani42/nvim-tree.lua",
+        config = 'require "plugins.config.nvim-tree"'
     })
 
     -- Better indents
-   	use({ 
-        "lukas-reineke/indent-blankline.nvim", 
-        config = 'require"plugins.config.indent-blankline"' 
+   	use({
+        "lukas-reineke/indent-blankline.nvim",
+        config = 'require"plugins.config.indent-blankline"'
     })
 
     -- Lua line
@@ -102,24 +102,33 @@ return require('packer').startup(function(use)
 	})
 
     -- Terminal
-   	use({ 
-        "akinsho/toggleterm.nvim", 
-        config = 'require "plugins.config.toggleterm"' 
+   	use({
+        "akinsho/toggleterm.nvim",
+        config = 'require "plugins.config.toggleterm"'
     })
 
     -- install without yarn or npm
-    use({ 
-        "iamcco/markdown-preview.nvim", 
-        run = "cd app && npm install", 
-        setup = function() 
-            vim.g.mkdp_filetypes = { "markdown" } 
-        end, 
-        ft = { "markdown" }, 
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+        end,
+        ft = { "markdown" },
     })
 
     -- Notificaciones
     use ({
         "rcarriga/nvim-notify",
-        config = 'require "plugins.config.notify"'
     })
+
+    -- LSP
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    }
+
+    -- Formatter
+    use 'mhartington/formatter.nvim'
 end)

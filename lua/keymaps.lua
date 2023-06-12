@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -17,3 +15,7 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 
 -- File Tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+
+-- bufferline ctrl + tab
+keymap("n", "<C-Tab>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<C-S-Tab>", ":BufferLineCyclePrev<CR>", opts)

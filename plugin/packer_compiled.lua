@@ -147,6 +147,16 @@ _G.packer_plugins = {
     path = "/home/ascci/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/ascci/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/ascci/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/ascci/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -157,8 +167,12 @@ _G.packer_plugins = {
     path = "/home/ascci/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/ascci/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
   ["nvim-notify"] = {
-    config = { 'require "plugins.config.notify"' },
     loaded = true,
     path = "/home/ascci/.local/share/nvim/site/pack/packer/start/nvim-notify",
     url = "https://github.com/rcarriga/nvim-notify"
@@ -214,14 +228,18 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
--- Config for: bufferline.nvim
-time([[Config for bufferline.nvim]], true)
-require "plugins.config.bufferline"
-time([[Config for bufferline.nvim]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 require "plugins.config.toggleterm"
 time([[Config for toggleterm.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+require "plugins.config.lualine"
+time([[Config for lualine.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require "plugins.config.bufferline"
+time([[Config for bufferline.nvim]], false)
 -- Config for: github-nvim-theme
 time([[Config for github-nvim-theme]], true)
 try_loadstring("\27LJ\2\nF\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0'colorscheme github_dark_colorblind\bcmd\bvim\0", "config", "github-nvim-theme")
@@ -230,34 +248,26 @@ time([[Config for github-nvim-theme]], false)
 time([[Config for gitsigns.nvim]], true)
 require "plugins.config.gitsigns"
 time([[Config for gitsigns.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-require"plugins.config.indent-blankline"
-time([[Config for indent-blankline.nvim]], false)
--- Config for: nvim-notify
-time([[Config for nvim-notify]], true)
-require "plugins.config.notify"
-time([[Config for nvim-notify]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-require "plugins.config.lualine"
-time([[Config for lualine.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require "plugins.config.treesitter"
-time([[Config for nvim-treesitter]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 require "plugins.config.comment"
 time([[Config for Comment.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-require "plugins.config.telescope"
-time([[Config for telescope.nvim]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
 require "plugins.config.nvim-tree"
 time([[Config for nvim-tree.lua]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+require"plugins.config.indent-blankline"
+time([[Config for indent-blankline.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+require "plugins.config.telescope"
+time([[Config for telescope.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require "plugins.config.treesitter"
+time([[Config for nvim-treesitter]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads

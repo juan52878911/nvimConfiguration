@@ -16,5 +16,6 @@
 -- Import de modulos
 -------------------------------------------------------
 require('plugins/packer')
+require('plugins/config')
 require('config')
 require('keymaps')
