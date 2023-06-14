@@ -48,6 +48,16 @@ local on_attach = function()
         vim.lsp.buf.hover,
         {}
     )
+
+    -- format with prettier
+    vim.keymap.set(
+        "n",
+        "<leader>pf",
+        function()
+            vim.lsp.buf.format {async = true}
+        end,
+        {}
+    )
 end
 
 local lspconfig = require("lspconfig")
@@ -69,9 +79,9 @@ local formatter = require('formatter')
 
 -- Configure Prettier as a formatter
 local prettier = {
-  command = 'prettier',
-  args = { '--stdin-filepath', '%:p' },
-  stdin = true
+    command = 'prettier',
+    args = { '--stdin-filepath', '%:p' },
+    stdin = true
 }
 
 formatter.setup({
