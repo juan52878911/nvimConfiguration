@@ -161,19 +161,22 @@ return require('packer').startup(function(use)
 
     -- copilot
 
-    use {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({})
-        end,
-    }
-
-    use({
-        "jonahgoldwastaken/copilot-status.nvim",
-        event = "BufReadPost",
-    })
+    -- use {
+    --     "zbirenbaum/copilot.lua",
+    --     cmd = "Copilot",
+    --     event = "InsertEnter",
+    --     config = function()
+    --         require("copilot").setup({})
+    --     end,
+    -- }
+    --
+    -- use({
+    --     "jonahgoldwastaken/copilot-status.nvim",
+    --     event = "BufReadPost",
+    -- })
+    
+    -- nvim treesitter refractor
+    use 'nvim-treesitter/nvim-treesitter-refactor'
 
     -- Sincronizamos automaticamente nuestros plugins
     if PACKER_BOOTSTRAP then

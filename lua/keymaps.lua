@@ -19,5 +19,5 @@ keymap("n", "<leader>fw", ":Telescope grep_string<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- bufferline ctrl + tab
-keymap("n", "<C-Tab>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<C-S-Tab>", ":BufferLineCyclePrev<CR>", opts)
+keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
