@@ -12,6 +12,8 @@ vim.g.maplocalleader = " "
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+-- Buscar dentro de los archivos
+keymap("n", "<leader>fw", ":Telescope grep_string<CR>", opts)
 
 -- File Tree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
