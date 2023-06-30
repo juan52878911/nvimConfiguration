@@ -178,6 +178,13 @@ return require('packer').startup(function(use)
     -- nvim treesitter refractor
     use 'nvim-treesitter/nvim-treesitter-refactor'
 
+    -- todo comments
+    use ({
+        'folke/todo-comments.nvim',
+        requires = { "nvim-lua/plenary.nvim" },
+        config = 'require "plugins.config.todo-comments"'
+    })
+
     -- Sincronizamos automaticamente nuestros plugins
     if PACKER_BOOTSTRAP then
         require('packer').sync()

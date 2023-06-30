@@ -24,7 +24,6 @@ treesitter.setup {
         enable = true,    -- false will disable the whole extension
         disable = { "" }, -- list of language that will be disabled
         additional_vim_regex_highlighting = true,
-
     },
     indent = { enable = true, disable = { "yaml" } },
     autotag = {
@@ -43,5 +42,12 @@ treesitter.setup {
             "#0000ff",
             "#ff00ff",
         },
-    }
+    },
+    refactor = {
+        highlight_definitions = {
+            enable = true,
+            -- Set to false if you have an `updatetime` of ~100.
+            clear_on_cursor_move = true,
+        },
+    },
 }
