@@ -14,7 +14,7 @@ bufferline.setup({
         -- and so changing this is NOT recommended, this is intended
         -- as an escape hatch for people who cannot bear it for whatever reason
         hover_command = nil, -- can be a string | function, see "Mouse actions"
-        indicator_icon = "|",
+        indicator_icon = "⏽",
         buffer_close_icon = " ",
         -- buffer_close_icon = '',
         modified_icon = "●",
@@ -37,7 +37,7 @@ bufferline.setup({
         tab_size = 21,
         diagnostics = "nvim_lsp", -- | "nvim_lsp" | "coc",
         diagnostics_update_in_insert = true,
-        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+        diagnostics_indicator = function(count)
             return "(" .. count .. ")"
         end,
         -- NOTE: this will be called a lot so don't do any heavy processing here

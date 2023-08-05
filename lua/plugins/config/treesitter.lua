@@ -34,13 +34,13 @@ treesitter.setup {
         extended_mode = false,
         max_file_lines = nil,
         colors = {
-            "#ff0000",
+            "#ff000c",
             "#ff8000",
             "#ffff00",
-            "#00ff00",
+            "#0cffc0",
             "#00ffff",
-            "#0000ff",
-            "#ff00ff",
+            "#aaaaff",
+            "#ff99ff",
         },
     },
     refactor = {

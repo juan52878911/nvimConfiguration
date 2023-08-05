@@ -174,15 +174,88 @@ return require('packer').startup(function(use)
     --     "jonahgoldwastaken/copilot-status.nvim",
     --     event = "BufReadPost",
     -- })
-    
+
     -- nvim treesitter refractor
     use 'nvim-treesitter/nvim-treesitter-refactor'
 
     -- todo comments
-    use ({
+    use({
         'folke/todo-comments.nvim',
         requires = { "nvim-lua/plenary.nvim" },
         config = 'require "plugins.config.todo-comments"'
+    })
+
+    -- dashboard
+    use {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup {
+                theme = 'hyper',
+                config = {
+                    -- week_header = {
+                    --     enable = true,
+                    -- },
+                    header = {
+                        ' █████╗ ███████╗ ██████╗ ██████╗██╗',
+                        '██╔══██╗██╔════╝██╔════╝██╔════╝██║',
+                        '███████║███████╗██║     ██║     ██║',
+                        '██╔══██║╚════██║██║     ██║     ██║',
+                        '██║  ██║███████║╚██████╗╚██████╗██║',
+                        '╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝╚═╝',
+                        'Nvim dashboard',
+                        ''
+                    },
+                    shortcut = {
+                        { desc = '󰊳 Update', group = '@property', action = 'PackerSync', key = 'u' },
+                        {
+                            icon = ' ',
+                            icon_hl = '@variable',
+                            desc = 'Files',
+                            group = 'Label',
+                            action = 'Telescope find_files',
+                            key = 'f',
+                        },
+                        {
+                            desc = ' Apps',
+                            group = 'DiagnosticHint',
+                            action = 'Telescope app',
+                            key = 'a',
+                        },
+                        {
+                            desc = ' dotfiles',
+                            group = 'Number',
+                            action = 'Telescope dotfiles',
+                            key = 'd',
+                        },
+                    },
+                },
+            }
+        end,
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
+
+    use({
+        'norcalli/nvim-colorizer.lua'
+    })
+
+    -- barbecue
+    use({
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        after = "nvim-web-devicons",       -- keep this if you're using NvChad
+        config = function()
+            require("barbecue").setup()
+        end,
+    })
+
+    -- symbols outline
+    use({
+        'simrat39/symbols-outline.nvim'
     })
 
     -- Sincronizamos automaticamente nuestros plugins

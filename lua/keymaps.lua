@@ -21,3 +21,6 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- bufferline ctrl + tab
 keymap("n", "<Tab>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", opts)
+
+-- Symbols outline toggle
+keymap("n", "<leader>s", ":SymbolsOutline<CR>", opts)
